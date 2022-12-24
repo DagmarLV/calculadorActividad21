@@ -1,13 +1,13 @@
 package com.checha.calculador;
-
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-class CalculadorApplicationTests {
+public class CalculadorApplicationTests {
+	private Calculador calculator = new Calculador();
 
 	@Test
-	void contextLoads() {
+	public void testSum() {
+		assertEquals(5, calculator.sum(2, 3));
 	}
-
 }
+
