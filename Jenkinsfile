@@ -40,9 +40,9 @@ pipeline {
      }
 
      post {
-           failure {
+           success {
                 slackSend channel: '#notificaciones',
-                color: 'danger',
+                color: 'success',
                 message:"The pipeline ${currentBuild.fullDisplayName} failed."
            }
      }
