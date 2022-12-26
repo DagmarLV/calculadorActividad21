@@ -47,4 +47,12 @@ pipeline {
            }
      }
 
+     post {
+           failure {
+                slackSend channel: '#notificaciones',
+                color: 'danger',
+                message:"The pipeline ${currentBuild.fullDisplayName} failed."
+           }
+     }
+
 }
