@@ -43,7 +43,7 @@ pipeline {
            success {
                 slackSend channel: '#notificaciones',
                 color: 'success',
-                message:"The pipeline ${currentBuild.fullDisplayName} failed."
+                message:"The pipeline ${currentBuild.fullDisplayName} ha resultado exitosa."
            }
      }
 
