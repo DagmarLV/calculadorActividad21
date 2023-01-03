@@ -19,8 +19,8 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	testImplementation("io.cucumber:cucumber-java:7.10.1")
-	testImplementation('io.cucumber:cucumber-junit:7.10.1')
+	testImplementation("io.cucumber:cucumber-java:7.2.0")
+	testImplementation('io.cucumber:cucumber-junit:7.2.0')
 
 }
 
@@ -34,15 +34,15 @@ jacocoTestCoverageVerification {
 	}
 }
 
-tasks.register('acceptanceTest', Test) {
-	include '**/acceptance/**'
-	systemProperties System.getProperties()
-}
 test {
 	useJUnitPlatform()
 	exclude '**/acceptance/**'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
+tasks.register('acceptanceTest', Test) {
+	include '**/acceptance/**'
+	systemProperties System.getProperties()
 }
+
+
+
