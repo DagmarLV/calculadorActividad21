@@ -53,6 +53,12 @@ pipeline {
                     sh "docker push dagmarlezama/calculador"
                 }
           }
+          stage("Deploy to staging") {
+                steps {
+                    sh "docker run -d --rm -p 8765:8080 --name calculador dagmarlezama/calculador"
+                }
+          }
+
 
      }
 
