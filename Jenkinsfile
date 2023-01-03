@@ -72,11 +72,10 @@ pipeline {
      }
 
      post {
-           success {
-                slackSend channel: '#notificaciones',
-                color: 'success',
-                message:"The pipeline ${currentBuild.fullDisplayName} ha resultado exitosa."
+           always {
+                sh "docker stop calculador"
            }
      }
+
 
 }
