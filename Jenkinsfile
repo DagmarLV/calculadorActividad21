@@ -53,11 +53,20 @@ pipeline {
                     sh "docker push dagmarlezama/calculador"
                 }
           }
+
           stage("Deploy to staging") {
                 steps {
                     sh "docker run -d --rm -p 8765:8080 --name calculador dagmarlezama/calculador"
                 }
           }
+
+          stage("Acceptance test") {
+                steps {
+                    sleep 60
+                    sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+                }
+          }
+
 
 
      }
