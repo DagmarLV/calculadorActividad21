@@ -62,8 +62,8 @@ pipeline {
 
           stage("Acceptance test") {
                 steps {
-                    sh "./gradlew acceptanceTest -D calculador.url=http://localhost:8765"
-                         sh  "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+                    sleep 60
+                    sh "./gradlew acceptanceTest -Dcalculador.url=http://localhost:8765"
                 }
           }
 
