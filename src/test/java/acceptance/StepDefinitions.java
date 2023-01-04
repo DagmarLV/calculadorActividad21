@@ -6,8 +6,8 @@ import org.springframework.web.client.RestTemplate;
 import static org.junit.Assert.assertEquals;
 /** Steps definitions for calculador.feature */
 public class StepDefinitions {
-    private String server = System.getProperty("calculador.url");
-    private RestTemplate restTemplate = new RestTemplate();
+    private final String server = System.getProperty("calculador.url");
+    private final RestTemplate restTemplate = new RestTemplate();
     private String a;
     private String b;
     private String result;

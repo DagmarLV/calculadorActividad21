@@ -30,6 +30,7 @@ tasks.register('acceptanceTest', Test) {
 }
 
 test {
+	useJUnitPlatform()
 	exclude '**/acceptance/**'
 }
 
