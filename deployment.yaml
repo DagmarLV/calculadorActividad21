@@ -22,7 +22,7 @@ spec:
   spec:
    containers:
     - name: calculador
-      image: dagmarlezama/calculador:caching
+      image: dagmarlezama/calculador:{{VERSION}}
       ports:
       - containerPort: 8080
       readinessProbe:
