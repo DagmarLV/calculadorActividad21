@@ -46,19 +46,19 @@ pipeline {
 
           stage("Docker build") {
                 steps {
-                    sh "docker build -t dagmarlezama/calculador${BUILD_TIMESTAMP} ."
+                    sh "docker build -t dagmarlezama/calculador:${BUILD_TIMESTAMP} ."
                 }
           }
 
           stage("Docker push") {
                 steps {
-                    sh "docker push dagmarlezama/calculador${BUILD_TIMESTAMP}"
+                    sh "docker push dagmarlezama/calculador:${BUILD_TIMESTAMP}"
                 }
           }
 
           stage("Deploy to staging") {
                 steps {
-                    sh "docker run -d --rm -p 8765:8080 --name calculador dagmarlezama/calculador${BUILD_TIMESTAMP}"
+                    sh "docker run -d --rm -p 8765:8080 --name calculador dagmarlezama/calculador:${BUILD_TIMESTAMP}"
                 }
           }
 
