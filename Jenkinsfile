@@ -91,6 +91,7 @@ pipeline {
                   sleep 60
                   sh "chmod +x smoke-test.sh && ./smoke-test.sh"
               }
+          }
      }
 
      post {
