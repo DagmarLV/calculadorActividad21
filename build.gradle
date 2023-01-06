@@ -16,6 +16,8 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.hazelcast:hazelcast:5.0.2'
+
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
